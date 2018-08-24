@@ -616,32 +616,29 @@ textarea {
 # Front-end Posting
 --------------------------------------------------------------*/
 #post-form {
-	background:  whitesmoke;	
+	background:  whitesmoke;
 	position:  absolute;
-	top: 25%;
-	left: 25%;
+	top: 6%;
+	left: 33%;
+	width: 33%;
 	opacity: .9;
 	z-index: 10;
 }
 
 #bottom-drawer {
-	bottom:0;
-	height:0.1px;
-	overflow: hidden;
+	background-color: rgba(10,0,50,.85);
+	display:  block;
 	position: fixed;
-	transition: all 1.5s;
+	height: 0.01vh;
+	bottom: 0;
+	transition: height 1s;
+	width: 100vw;
 	z-index: 9;
-	
 }
 
 #bottom-drawer:target {
-	background-color: rgba(0,0,0,0.85);
-	content:"";
-	display: block;
 	height: 100vh;
-	
 	width:100vw;
-	
 }
 
 a.escape {
@@ -651,14 +648,15 @@ a.escape {
 }
 
 #drawerpull {
-	
 	background: #461b93;
-	color: white;	
+	border-radius: 10px 10px 0 0;
+	box-shadow: -3px 1px 8px #1b1b1a9e;
+	color: white;
 	position: fixed;
-		right: 2em;
-		bottom: 0;
+	right: 2em;
+	bottom: 0vh;
 	text-align: center;
-	transition: all 1.5s;
+	transition: all 1s;
 	width:  10em;
 }
 
@@ -672,7 +670,8 @@ a.escape {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: #662ad8;
+	text-decoration: none;
 }
 
 a:visited {
@@ -680,7 +679,7 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-	color: midnightblue;
+	text-decoration: underline dashed; 
 }
 
 a:focus {

@@ -16,7 +16,7 @@
 	<footer id="colophon" class="site-footer">
 
 	</footer><!-- #colophon -->
-	<a href="#bottom-drawer" id="drawerpull">Add +</button><section id="bottom-drawer"><a href="#" class="escape"></a><aside id="post-form"><?php echo do_shortcode('[wpuf_form id="31"]') ?></aside></section>
+	<section id="bottom-drawer"><a href="#bottom-drawer" id="drawerpull">Add +</button><a href="#" class="escape"></a><aside id="post-form"><?php echo do_shortcode('[wpuf_form id="31"]') ?></aside></section>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
