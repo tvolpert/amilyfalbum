@@ -3,11 +3,17 @@
 
 	console.log('hallo woild');
 	//homemade lightbox for opening images
-	$('a').click(function( event ) {
+	$('[rel="lightbox"]').click(function( event ) {
 		event.preventDefault();
 		var picLink = $(this).attr('href');
 		console.log(picLink);
+		$('body').append('<div class="lightbox"><img src="'+picLink+'"></div>');
+		$('.lightbox').click(function() {
+		$(this).detach();
+		} );
 	} );
+	
+	
 	
 	
 })( jQuery ); //end code

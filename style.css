@@ -1012,7 +1012,23 @@ a:hover, a:active {
 .bypostauthor {
 	display: block;
 }
-
+ 
+/*--------------------------------------------------------------
+## Photos
+--------------------------------------------------------------*/
+.lightbox {
+	background: rgba(0, 0, 0, 0.85);
+	height:  100vh;
+	padding:  10px;
+	position:  fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+}
+.lightbox img {
+	margin: auto;
+} 
+ 
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
