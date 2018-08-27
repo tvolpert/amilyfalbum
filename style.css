@@ -77,7 +77,7 @@ body {
  */
 
 h1 {
-	font-size: 2em;
+	font-size: 3em;
 	margin: 0.67em 0;
 }
 
@@ -405,6 +405,8 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	font-family: Montserrat thin;
+	margin: 0;
 }
 
 p {
@@ -524,6 +526,11 @@ table {
 	width: 100%;
 }
 
+#primary {
+	width:  90%;
+	margin:  auto;
+}
+
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -615,12 +622,12 @@ textarea {
 /*--------------------------------------------------------------
 # Front-end Posting
 --------------------------------------------------------------*/
+
 #post-form {
 	background:  whitesmoke;
+	margin: 10%;
 	position:  absolute;
-	top: 6%;
-	left: 33%;
-	width: 33%;
+	top: 0;
 	opacity: .9;
 	z-index: 10;
 }
@@ -631,7 +638,8 @@ textarea {
 	position: fixed;
 	height: 0.01vh;
 	bottom: 0;
-	transition: height 1s;
+	overflow: auto;
+	transition: height 1s cubic-bezier(0.9, 0.07, 0.19, 1.15);
 	width: 100vw;
 	z-index: 9;
 }
@@ -656,8 +664,17 @@ a.escape {
 	right: 2em;
 	bottom: 0vh;
 	text-align: center;
-	transition: all 1s;
+	transition: all 1s cubic-bezier(0.9, 0.07, 0.19, 1.15);
 	width:  10em;
+}
+
+@media only screen and (min-width: 768px) {
+	#post-form {
+		top: 6%;
+		left: 33%;
+		margin: 0;
+		width: 33%;
+	}
 }
 
 
@@ -665,7 +682,6 @@ a.escape {
 	bottom: 100vh;
 	
 }
-
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -917,7 +933,15 @@ a:hover, a:active {
 	clear: both;
 	margin: 0 0 1.5em;
 }
-
+.entry-meta {
+	font-family: montserrat;
+	font-size: 0.7em;
+}
+.entry-footer span {
+	padding: 0.5em;
+	border-right: 1px solid black;
+}
+ 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
