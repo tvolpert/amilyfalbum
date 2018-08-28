@@ -887,11 +887,11 @@ body.dark-mode #dmToggle:before {
 	background: hsl(261, 80%, 80%);
 }
 
-body.dark-mode, body.dark-mode .entry-footer span {
-	background: rgb(45, 45, 45);
-	color: ghostwhite; 
+body.dark-mode {
+	background: rgb(23, 23, 23);
+	color: ghostwhite;
 }
-body.dark-mode section, body.dark-mode article, body.dark-mode .nav-previous, body.dark-mode .nav-next {
+body.dark-mode section, body.dark-mode article {
 	background: rgba(16, 16, 16, 0.95);
 }
 
