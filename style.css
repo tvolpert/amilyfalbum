@@ -403,8 +403,9 @@ textarea {
 	line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6, header {
+h1, h2, h3, h4, h5, h6 {
 	clear: both;
+<<<<<<< HEAD
 <<<<<<< HEAD
 	font-family: "Century Gothic",		/* Windows (HP printer) */
 					"Avant Garde Gothic",	/* HP font name */
@@ -416,10 +417,13 @@ h1, h2, h3, h4, h5, h6, header {
 =======
 	font-family: "montserrat thin",sans-serif;
 >>>>>>> parent of 59c16c1... added Dark mode
+=======
+	font-family: "montserrat thin",sans-serif;
+>>>>>>> parent of 84a8554... wait heck i broke my layout?
 }
 h1.site-title {
 	font-size: 6rem;
-	font-weight: lighter;
+	font-weight: 100;
 	letter-spacing: -8px;
 	line-height: 0.7;
 	text-align:  center;
@@ -898,11 +902,11 @@ a:hover, a:active {
 	background: hsl(261, 80%, 80%);
 }
 
-#page.dark-mode, #page.dark-mode .entry-footer span{
+#page.dark-mode {
 	background: rgb(23, 23, 23);
 	color: ghostwhite;
 }
-#page.dark-mode section, #page.dark-mode article, #page.dark-mode .nav-previous, #page.dark-mode .nav-next {
+#page.dark-mode section, #page.dark-mode article {
 	background: rgba(16, 16, 16, 0.95);
 }
 
@@ -1035,7 +1039,7 @@ a:hover, a:active {
 	background-color: ghostwhite;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.34);
 }
-
+ 
 @media only screen and (min-width: 768px) {
 	.site-main {
 		display: grid;
