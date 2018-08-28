@@ -872,7 +872,7 @@ a:hover, a:active, a:focus {
 
 /* dark mode */
 
-#darkMode {
+#dark-mode {
 	cursor: pointer;
 }
 
@@ -892,29 +892,29 @@ a:hover, a:active, a:focus {
 
 	
 }
-body.darkMode #dmToggle:before {
+body.dark-mode #dmToggle:before {
 	text-align: right;
 	background: hsl(261, 80%, 80%);
 }
 
-body.darkMode {
-	background: rgb(23, 23, 23);
-	color: ghostwhite;
+body.dark-mode, body.dark-mode .entry-footer span {
+	background: rgb(45, 45, 45);
+	color: ghostwhite; 
 }
-body.darkMode section, body.darkMode article {
+body.dark-mode section, body.dark-mode article, body.dark-mode .nav-previous, body.dark-mode .nav-next {
 	background: rgba(16, 16, 16, 0.95);
 }
 
 
 
-body.darkMode a {
+body.dark-mode a {
 	color: hsl(261, 74%, 75%);
 }
-body.darkMode a:visited {
+body.dark-mode a:visited {
 	color: hsl(261, 22%, 63%);
 }
 
-body.darkMode a:focus, body.darkMode a:active, body.darkMode a:hover {
+body.dark-mode a:focus, body.dark-mode a:active, body.dark-mode a:hover {
 	color: hsla(203, 85%, 63%, 1);
 }
 

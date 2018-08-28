@@ -13,9 +13,26 @@
 		} );
 	} );
 	//toggle dark.light mode
-	$('#darkMode').click(function() {
-			$('body').toggleClass('darkMode');
-	});
+	
+		function togglePageContentLightDark() {
+		  var body = document.getElementById('body')
+		  var currentClass = body.className
+		  var newClass = body.className == 'dark-mode' ? 'light-mode' : 'dark-mode';
+		  body.className = newClass;
+
+		  document.cookie = 'theme=' + (newClass == 'light-mode' ? 'light' : 'dark');
+	
+		
+			function setThemeFromCookie() {
+			  var body = document.getElementById('body')
+			  $('body').addClass(isDarkThemeSelected() ? 'dark-mode' : 'light-mode');
+			};	  
+			console.log('Cookies are now: ' + document.cookie);
+				$('#dark-mode').click(setThemeFromCookie());	
+		
+		};
+	
+
 	
 	
 	
