@@ -405,8 +405,6 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-<<<<<<< HEAD
-<<<<<<< HEAD
 	font-family: "Century Gothic",		/* Windows (HP printer) */
 					"Avant Garde Gothic",	/* HP font name */
 					"Avant Garde",		/* MacOS */
@@ -414,12 +412,7 @@ h1, h2, h3, h4, h5, h6 {
 					/* Fallback options */
 					helvetica,			/* Unix+X, MacOS */
 					sans-serif;
-=======
-	font-family: "montserrat thin",sans-serif;
->>>>>>> parent of 59c16c1... added Dark mode
-=======
-	font-family: "montserrat thin",sans-serif;
->>>>>>> parent of 84a8554... wait heck i broke my layout?
+
 }
 h1.site-title {
 	font-size: 6rem;
@@ -649,7 +642,25 @@ textarea {
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
+.nav-links {
+	justify-content: space-between;
+	display: flex;
+}
 
+.nav-previous:before {
+	content: "\23ea";
+	padding-right: 10px;
+}
+.nav-previous {
+	
+}
+.nav-next:after {
+	content: "\23e9";
+	padding-left: 10px;
+}
+.nav-next {
+	
+}
 /*--------------------------------------------------------------
 # Front-end Posting
 --------------------------------------------------------------*/
@@ -817,16 +828,16 @@ a:hover, a:active {
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
-	width: 50%;
+	/* float: left; */
+	/* width: 50%; */
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
+	/* float: right; */
 	text-align: right;
-	width: 50%;
+	/* width: 50%; */
 }
 
 /*--------------------------------------------------------------
@@ -906,7 +917,7 @@ a:hover, a:active {
 	background: rgb(23, 23, 23);
 	color: ghostwhite;
 }
-#page.dark-mode section, #page.dark-mode article {
+#page.dark-mode .hentry, #page.dark-mode .widget, #page.dark-mode .comment {
 	background: rgba(16, 16, 16, 0.95);
 }
 
@@ -952,28 +963,15 @@ a:hover, a:active {
 # Clearings
 --------------------------------------------------------------*/
 .clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
+.clear:after
+{
 	content: "";
 	display: table;
 	table-layout: fixed;
 }
 
 .clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
+.entry-content:after {
 	clear: both;
 }
 
@@ -999,7 +997,7 @@ a:hover, a:active {
 	display: block;
 }
 
-.hentry {
+.hentry, .widget, .comment, .nav-links div {
 	background: rgb(250,250,250);
 	margin: 0 0 1.5em;
 	padding: 10px;
@@ -1036,15 +1034,19 @@ a:hover, a:active {
 	display: inline-block;
 	padding: 0.4em;
 	/* border: 1px solid black; */
-	background-color: ghostwhite;
-	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.34);
+	/* background-color: ghostwhite; */
+	/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.34); */
 }
  
 @media only screen and (min-width: 768px) {
-	.site-main {
+	.site-content {
+		justify-items: center;
+		justify-content: center;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-column-gap: 30px;
+		grid-template-columns: 2fr 1fr;
+		grid-gap: 15px;
 	}
 	.hentry{
 		
