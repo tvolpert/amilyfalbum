@@ -22,16 +22,16 @@
 		} else {
 			document.cookie = 'theme=dark'
 		}
-				$('#page').toggleClass('dark-mode');
+				$(':root').toggleClass('dark-mode');
 				console.log('roger that');
 	});
 	
 	function setThemeFromCookie() {
 		if ( document.cookie.match(/theme=dark/i) ) {
-			$('#page').addClass('dark-mode');
+			$(':root').addClass('dark-mode');
 		} else {
 	
-			$('#page').removeClass('dark-mode')
+			$(':root').removeClass('dark-mode')
 		}
 	};
 	setThemeFromCookie();

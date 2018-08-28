@@ -24,7 +24,7 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'amilyfalbum' ); ?></a>
 
-	<span id="dark-mode">light mode<span id="dmToggle" aria-hidden="true"></span>dark mode</span>
+	<span id="dark-mode">light<span id="dmToggle" aria-hidden="true"></span>dark</span>
  
 
 	<header id="masthead" class="site-header">
