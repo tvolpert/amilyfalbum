@@ -12,7 +12,7 @@
 		$(this).detach();
 		} );
 	} ); 
-<<<<<<< HEAD
+
 
 	//toggle dark/light mode
 	$('#dark-mode').click( 	function() {
@@ -35,8 +35,7 @@
 		}
 	};
 	setThemeFromCookie();
-=======
->>>>>>> parent of 59c16c1... added Dark mode
+
 	
 	
 	
