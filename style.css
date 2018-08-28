@@ -403,13 +403,19 @@ textarea {
 	line-height: 1.5;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, header {
 	clear: both;
-	font-family: "montserrat thin",sans-serif;
+	font-family: "Century Gothic",		/* Windows (HP printer) */
+					"Avant Garde Gothic",	/* HP font name */
+					"Avant Garde",		/* MacOS */
+					"URW Gothic L",		/* Unix+X+FontConfig */
+					/* Fallback options */
+					helvetica,			/* Unix+X, MacOS */
+					sans-serif;
 }
 h1.site-title {
 	font-size: 6rem;
-	font-weight: 100;
+	font-weight: lighter;
 	letter-spacing: -8px;
 	line-height: 0.7;
 	text-align:  center;
@@ -887,11 +893,11 @@ a:hover, a:active {
 	background: hsl(261, 80%, 80%);
 }
 
-#page.dark-mode {
+#page.dark-mode, #page.dark-mode .entry-footer span{
 	background: rgb(23, 23, 23);
 	color: ghostwhite;
 }
-#page.dark-mode section, #page.dark-mode article {
+#page.dark-mode section, #page.dark-mode article, #page.dark-mode .nav-previous, #page.dark-mode .nav-next {
 	background: rgba(16, 16, 16, 0.95);
 }
 
