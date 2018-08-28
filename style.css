@@ -405,6 +405,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6, header {
 	clear: both;
+<<<<<<< HEAD
 	font-family: "Century Gothic",		/* Windows (HP printer) */
 					"Avant Garde Gothic",	/* HP font name */
 					"Avant Garde",		/* MacOS */
@@ -412,6 +413,9 @@ h1, h2, h3, h4, h5, h6, header {
 					/* Fallback options */
 					helvetica,			/* Unix+X, MacOS */
 					sans-serif;
+=======
+	font-family: "montserrat thin",sans-serif;
+>>>>>>> parent of 59c16c1... added Dark mode
 }
 h1.site-title {
 	font-size: 6rem;
@@ -865,6 +869,7 @@ a:hover, a:active {
 	outline: 0;
 }
 
+<<<<<<< HEAD
 
 /* dark mode */
 
@@ -915,6 +920,8 @@ a:hover, a:active {
 }
 
 
+=======
+>>>>>>> parent of 59c16c1... added Dark mode
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
@@ -1012,7 +1019,7 @@ a:hover, a:active {
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
-}
+} 
 .entry-meta { 
 	font-family: montserrat;
 	font-size: 0.7em;
