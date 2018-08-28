@@ -405,22 +405,24 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
-	font-family: "montserrat thin",sans-serif;
+	font-family: /*Questrial, */ "Century Gothic",	 "Avant Garde Gothic",	 "Avant Garde",	 "URW Gothic L",helvetica,	sans-serif;
+	
 }
 h1.site-title {
 	font-size: 6rem;
 	font-weight: 100;
 	letter-spacing: -8px;
-	line-height: 0.7;
-	text-align:  center;
+	line-height: 0.8;
+	text-align: center;
 	text-transform: uppercase;
 	margin: 0;
-	/* margin-top: 30px; */
 }
 .site-description {
+	font-family: /*Questrial, */ "Century Gothic",	 "Avant Garde Gothic",	 "Avant Garde",	 "URW Gothic L",helvetica,	sans-serif;
 	margin:  auto;
-	max-width: 1100px;
+	max-width: 723px;
 	text-align: right;
+	text-transform: uppercase;
 }
 h2 {
 	font-size: 1rem;
@@ -430,7 +432,7 @@ p {
 	margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn, cite, em {
 	font-style: italic;
 }
 
@@ -489,9 +491,10 @@ html {
 }
 
 body {
-	background: rgba(245, 241, 240, 1);
-	/* Fallback for when there is no custom background color defined. */
+	background: hsla(42, 9%, 92%, 1);
+	
 }
+
 
 hr {
 	background-color: #ccc;
@@ -501,12 +504,18 @@ hr {
 }
 
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0px 0 1.5em 1em;
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
 }
+
+li:before {
+	content: "\2726";
+	margin-right: 1em;
+	margin-left: -1.9em;
+	}
 
 ol {
 	list-style: decimal;
@@ -514,7 +523,7 @@ ol {
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
+	margin-bottom: 0; 
 	margin-left: 1.5em;
 }
 
@@ -545,7 +554,7 @@ table {
 
 #primary {
 	max-width: 1100px;
-	margin:  auto;
+	/* margin:  auto; */
 }
 
 /*--------------------------------------------------------------
@@ -665,10 +674,11 @@ textarea {
 	height: 100vh;
 	width:100vw;
 }
-
+ 
 a.escape {
 	display:block;
 	height: 100%;
+	position:  absolute;
 	width: 100%;
 }
 
@@ -679,10 +689,11 @@ a.escape {
 	color: white;
 	position: fixed;
 	right: 2em;
-	bottom: 0vh;
+	bottom: 0;
 	text-align: center;
 	transition: all 1s cubic-bezier(0.9, 0.07, 0.19, 1.15);
 	width:  10em;
+	z-index: 999;
 }
 
 @media only screen and (min-width: 768px) {
@@ -703,24 +714,24 @@ a.escape {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: hsl(261, 69%, 51%);
+	color: hsl(261, 70%, 44%);
 	text-decoration: none;
 }
 
 a:visited {
-	color: hsla(261, 20%, 51%, 1);
+	color: hsl(261, 42%, 34%);
 }
 
 a:hover, a:focus, a:active {
-	text-transform: uppercase;
+	/* text-transform: uppercase; */
 }
 
 a:focus {
 	outline: thin dotted;
 }
 
-a:hover, a:active {
-	outline: 0;
+a:hover, a:active, a:focus {
+    color: hsl(203, 100%, 30%);
 }
 
 /*--------------------------------------------------------------
@@ -859,6 +870,54 @@ a:hover, a:active {
 	outline: 0;
 }
 
+/* dark mode */
+
+#darkMode {
+	cursor: pointer;
+}
+
+#dmToggle:before {
+	background: darkgrey;
+	border-radius: 50px;
+	box-shadow: inset -2px 1px 1px hsla(0, 0%, 0%, .45);
+	color: ghostwhite;
+	content: "\26ab";
+	display: inline-block;
+	line-height: 80%;
+	margin: 0 5px;
+	padding-top: 3px;
+	text-shadow: -1px 1px 2px rgba(0,0,0,.45);
+	transition: all .5s;
+	width: 31px;
+
+	
+}
+body.darkMode #dmToggle:before {
+	text-align: right;
+	background: hsl(261, 80%, 80%);
+}
+
+body.darkMode {
+	background: rgb(23, 23, 23);
+	color: ghostwhite;
+}
+body.darkMode section, body.darkMode article {
+	background: rgba(16, 16, 16, 0.95);
+}
+
+
+
+body.darkMode a {
+	color: hsl(261, 74%, 75%);
+}
+body.darkMode a:visited {
+	color: hsl(261, 22%, 63%);
+}
+
+body.darkMode a:focus, body.darkMode a:active, body.darkMode a:hover {
+	color: hsla(203, 85%, 63%, 1);
+}
+
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
@@ -896,7 +955,7 @@ a:hover, a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-	content: "";
+	/* content: ""; */
 	display: table;
 	table-layout: fixed;
 }
@@ -933,11 +992,21 @@ a:hover, a:active {
 }
 
 .hentry {
-	background: rgb(250,250,250);
-	margin: 0 0 1.5em;
+	align-items: center;
+	/* background: rgba(250,250,250,0.95); */
+	display:  grid;
+	grid-column-gap: 15px;
+	/* margin: 0 0 1.5em; */
 	padding: 10px;
 }
 
+section, article {
+	background: rgba(250,250,250,0.95);
+}
+.widget {
+	background: rgba(250,250,250,0.95);
+	padding: 10px;
+}
 .updated:not(.published) {
 	display: none;
 }
@@ -972,35 +1041,46 @@ a:hover, a:active {
 	background-color: ghostwhite;
 	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.34);
 }
-
+.site-main {
+	display: grid;
+	grid-gap:  15px;
+}
 @media only screen and (min-width: 768px) {
-	.site-main {
+	.site-content {
+		justify-items: center;
+		justify-content: center;
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-column-gap: 30px;
+		grid-template-columns: 2fr 1fr;
+		grid-gap: 15px;
+	}
+	.site-main {
 	}
 	.hentry{
 		
 	}
 	.site-main .hentry:first-of-type {
 		align-items: center;
-		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-column-end: span 3;
+		grid-column-end: span 2;
 	}
 	.hentry:first-of-type header {
 		grid-column-end: span 2;
 	}
 	.post-thumbnail {
 		float: left;
-		margin: 10px 30px;
+		margin: 10px 0px;
 		grid-row-end: span 2;
 		/* grid-column-start: 2; */
 	}
+	#secondary{
+		max-width: 500px; 
+	}
 }
 @media only screen and (min-width: 1025px) {
-
-}
+	.site-main .hentry:first-of-type {
+		grid-column-end: span 3; 
+	}
+} 
  
 /*--------------------------------------------------------------
 ## Comments
@@ -1017,7 +1097,7 @@ a:hover, a:active {
 ## Photos
 --------------------------------------------------------------*/
 .lightbox {
-	background: rgba(0, 0, 0, 0.85);
+	background: rgba(0, 0, 0, 0.85); 
 	height:  100vh;
 	padding:  10px;
 	position:  fixed;

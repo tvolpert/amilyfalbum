@@ -131,7 +131,7 @@ if ( ! function_exists( 'amilyfalbum_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+		<a class="post-thumbnail" href="<?php the_post_thumbnail_url( 'full'); ?>" rel="lightbox" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
