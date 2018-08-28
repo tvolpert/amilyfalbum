@@ -859,7 +859,7 @@ a:hover, a:active {
 	outline: 0;
 }
 
-<<<<<<< HEAD
+
 /* dark mode */
 
 #dark-mode {
@@ -882,29 +882,29 @@ a:hover, a:active {
 
 	
 }
-body.dark-mode #dmToggle:before {
+#page.dark-mode #dmToggle:before {
 	text-align: right;
 	background: hsl(261, 80%, 80%);
 }
 
-body.dark-mode {
+#page.dark-mode {
 	background: rgb(23, 23, 23);
 	color: ghostwhite;
 }
-body.dark-mode section, body.dark-mode article {
+#page.dark-mode section, #page.dark-mode article {
 	background: rgba(16, 16, 16, 0.95);
 }
 
 
 
-body.dark-mode a {
+#page.dark-mode a {
 	color: hsl(261, 74%, 75%);
 }
-body.dark-mode a:visited {
+#page.dark-mode a:visited {
 	color: hsl(261, 22%, 63%);
 }
 
-body.dark-mode a:focus, body.dark-mode a:active, body.dark-mode a:hover {
+#page.dark-mode a:focus, #page.dark-mode a:active, #page.dark-mode a:hover {
 	color: hsla(203, 85%, 63%, 1);
 }
 
