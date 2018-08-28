@@ -23,7 +23,11 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'amilyfalbum' ); ?></a>
+<<<<<<< HEAD
 	<span id="dark-mode">light mode<span id="dmToggle" aria-hidden="true"></span>dark mode</span>
+=======
+
+>>>>>>> parent of 59c16c1... added Dark mode
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php

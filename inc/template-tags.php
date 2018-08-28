@@ -115,7 +115,7 @@ if ( ! function_exists( 'amilyfalbum_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
-	 * Wraps the post thumbnail in a link to the post for loops, or the image itself for single views
+	 * Wraps the post thumbnail in a link to the image itself
 	 */
 	function amilyfalbum_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
@@ -131,7 +131,7 @@ if ( ! function_exists( 'amilyfalbum_post_thumbnail' ) ) :
 
 		<?php else : ?>
 
-		<a class="post-thumbnail" href="<?php the_post_thumbnail_url( 'full'); ?>" rel="lightbox" aria-hidden="true" tabindex="-1">
+		<a class="post-thumbnail" href="<?php the_post_thumbnail_url('full'); ?>" rel="lightbox" aria-hidden="true" tabindex="-1">
 			<?php
 			the_post_thumbnail( 'post-thumbnail', array(
 				'alt' => the_title_attribute( array(
