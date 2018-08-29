@@ -125,9 +125,9 @@ function theme_slug_widgets_init() {
     register_sidebar( array(
         'name' => __( 'drawer login', 'theme-slug' ),
         'id' => 'drawer_login',
-        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'theme-slug' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</li>',
+        'description' => __( 'Widgets in this area will be shown ONLY in the bottom drawer', 'theme-slug' ),
+        'before_widget' => '<div id="front-end-login" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widgettitle">',
 		'after_title'   => '</h2>',
     ) );
@@ -177,4 +177,67 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+// Show posts of 'post' and 'pic' post types on home page
+function add_my_post_types_to_query( $query ) {
+  if ( is_home() && $query->is_main_query() )
+    $query->set( 'post_type', 'attachment' );
+  return $query;
+}
+add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
 
+
+/**
+ * Plugin Name:       Front-end Media Example
+ * Plugin URI:        http://derekspringer.wordpress.com
+ * Description:       An example of adding the media loader on the front-end.
+ * Version:           0.1
+ * Author:            Derek Springer
+ * Author URI:        http://derekspringer.wordpress.com
+ * License:           GPL-2.0+
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * Text Domain:       frontend-media
+ * Domain Path:       /languages
+ */
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+/**
+ * Class wrapper for Front End Media example
+ */
+class Front_End_Media {
+	/**
+	 * A simple call to init when constructed
+	 */
+	function __construct() {
+		add_action( 'init', array( $this, 'init' ) );
+	}
+	function init() {
+		load_plugin_textdomain(
+			'frontend-media',
+			false,
+			dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_shortcode( 'frontend-button', array( $this, 'frontend_shortcode' ) );
+	}
+	/**
+	 * Call wp_enqueue_media() to load up all the scripts we need for media uploader
+	 */
+	function enqueue_scripts() {
+		wp_enqueue_media();
+		
+	}
+
+	function frontend_shortcode( $args ) {
+		// check if user can upload files
+		if ( is_user_logged_in() ) {
+			$str = __( 'Select File', 'frontend-media' );
+			return '<input id="frontend-button" type="button" value="Upload Picture(s)" class="button"><img id="frontend-image" />';
+		} 
+		return __( 'Please Login To Upload', 'frontend-media' );
+	}
+}
+new Front_End_Media();
+
+
+?>
