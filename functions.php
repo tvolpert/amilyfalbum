@@ -177,13 +177,7 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-// Show posts of 'post' and 'pic' post types on home page
-function add_my_post_types_to_query( $query ) {
-  if ( is_home() && $query->is_main_query() )
-    $query->set( 'post_type', 'attachment' );
-  return $query;
-}
-add_action( 'pre_get_posts', 'add_my_post_types_to_query' );
+
 
 
 /**
@@ -239,5 +233,15 @@ class Front_End_Media {
 }
 new Front_End_Media();
 
+// unattached image loop?
+function get_attachment_files(){
+$args = array(
+    'post_type' => 'attachment',
+    'numberposts' => -1,
+    'post_status' => null,
+    'post_parent' => 0
+);
+$attachments = get_posts($args);
+if ($attachments) { foreach ($attachments as $post) { setup_postdata($post); the_attachment_link($post->ID); } } }
 
 ?>
