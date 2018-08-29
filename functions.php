@@ -232,9 +232,9 @@ class Front_End_Media {
 		// check if user can upload files
 		if ( is_user_logged_in() ) {
 			$str = __( 'Select File', 'frontend-media' );
-			return '<input id="frontend-button" type="button" value="Upload Picture(s)" class="button"><img id="frontend-image" />';
+			return '<input id="frontend-button" type="button" value="Upload" class="button"><img id="frontend-image" />';
 		} 
-		return __( 'Please Login To Upload', 'frontend-media' );
+		return __( 'Please <a href="/familyalbum/login">Login</a> To Upload Pictures', 'frontend-media' );
 	}
 }
 new Front_End_Media();

@@ -23,10 +23,10 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'amilyfalbum' ); ?></a>
-
-	<span id="dark-mode">light<span id="dmToggle" aria-hidden="true"></span>dark</span>
- 
-
+	<nav id="top-bar">
+		<span id="dark-mode">light<span id="dmToggle" aria-hidden="true"></span>dark</span>
+		<div id="upload-form"><?php echo do_shortcode('[frontend-button]'); ?> </div>
+	</nav>
 	<header id="masthead" class="site-header">
 		<div class="site-branding">
 			<?php

@@ -14,13 +14,10 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-
+	&copy; <?php echo date('Y')?>, built with &#10024; by <a href="http://timvolpert.com">T(CR)V</a>
 	</footer><!-- #colophon -->
-<section id="bottom-drawer"><a href="#bottom-drawer" id="drawerpull">Add +</a><a href="#" class="escape"></a><aside id="post-form"><?php echo do_shortcode('[frontend-button]'); if ( is_active_sidebar( 'drawer_login' ) ) : ?>
-	<ul id="sidebar">
-		<?php dynamic_sidebar( 'drawer_login' ); ?>
-	</ul>
-<?php endif; ?></aside></section>
+
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

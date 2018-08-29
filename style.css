@@ -55,14 +55,14 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 
 :root {
 	--bg-color: hsl(12, 20%, 95%);
-	--drawer-bg-color:  hsla(26, 24%, 10%, 0.95);
 	--box-color: hsla(0, 0%, 98%, 0.95);
+	--drawer-bg-color:  hsla(26, 24%, 10%, 0.95);
 	--accent-color: hsl(261, 69%, 51%);
 	--visited-link-color: hsla(261, 20%, 51%, 1);
-	--text-color: hsl(0, 0%, 10%); 
+	--text-color: hsl(0, 0%, 10%);
 	--light-text-color: hsla(0, 0%, 98%, 0.95);
-	--highlight-color: hsl(327, 100%, 31%);
-	
+	--highlight-color: hsla(261, 100%, 80%, 1);
+	--shadow-color: hsla(0, 0%, 21%, 0.85);
 }
 :root.dark-mode {
 	--bg-color: hsl(0, 0%, 9%);
@@ -71,7 +71,8 @@ html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2
 	--accent-color: hsl(261, 62%, 72%);
 	--visited-link-color: hsl(261, 35%, 72%);
 	--text-color: hsla(0, 0%, 95%, 1);
-}
+	
+} 
  
 
 /*--------------------------------------------------------------
@@ -109,7 +110,13 @@ h1.site-title {
 	text-align:  center;
 	text-transform: uppercase;
 	margin: 0;
-	/* margin-top: 30px; */
+	margin-top: 0.6em;
+}
+ 
+@media only screen and (min-width: 768px) {
+	h1.site-title {
+		margin-top: 0;
+	}
 }
 .site-description {
 	margin:  auto;
@@ -245,11 +252,6 @@ table {
 	width: 100%;
 }
 
-#primary {
-	max-width: 1100px;
-	margin:  auto;
-}
-
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -257,24 +259,25 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	border: 1px solid;
-	border-color: #ccc #ccc #bbb;
-	border-radius: 3px;
-	background: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+	background: var(--accent-color);
+	border: none;
+	border-radius: 10px;
+	box-shadow: 2px 2px 2px var(--accent-color);
+	color: var(--light-text-color);
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: .6em 1em;
+	vertical-align:  baseline;
 }
-
+ 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #ccc #bbb #aaa;
+	background: var(--highlight-color);
 }
-
+ 
 button:active, button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
@@ -282,7 +285,8 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
+	box-shadow: 0px 0px 2px var(--accent-color);
+	transform: translate(2px,2px);
 }
 
 input[type="text"],
@@ -356,86 +360,28 @@ textarea {
 .nav-next {
 	
 }
+#top-bar {
+		align-items: center;	background: var(--box-color);
+	box-shadow: 2px 2px 5px var(--shadow-color);	display: flex;	justify-content: space-between;	line-height: 1;	opacity: .85;	padding: .5em;	position: fixed;	top: 0;	width: 100%;
+}
+@media only screen and (min-width:768px) {
+	#top-bar {
+		background: none;
+		box-shadow: none;
+	}
+}
 /*--------------------------------------------------------------
 # Front-end Posting
 --------------------------------------------------------------*/
+#upload-form {/* background-color: var(--box-color); *//* position: fixed; *//* top: 0; *//* padding:  1em; */}
 
-#post-form {
-	background: var(--box-color);
-	margin: 10%;
-	position:  absolute;
-	top: 0;
-	opacity: .9;
-	z-index: 10;
-}
-
-#bottom-drawer {
-	background-color: var(--drawer-bg-color);
-	display:  block;
-	position: fixed;
-	height: 0.01vh;
-	bottom: 0;
-	overflow: auto;
-	transition: height 1s cubic-bezier(0.9, 0.07, 0.19, 1.15);
-	width: 100vw;
-	z-index: 9;
-}
-
-#bottom-drawer:target {
-	height: 100vh;
-	width:100vw;
-}
-
-a.escape {
-	display:block;
-	height: 100%;
-	width: 100%;
-}
-
-#drawerpull {
-	background: var(--accent-color);
-	border-radius: 10px 10px 0 0;
-	box-shadow: -3px 1px 8px #1b1b1a9e;
-	color: white;
-	position: fixed;
-	right: 2em;
-	bottom: 0vh;
-	text-align: center;
-	transition: all 1s cubic-bezier(0.9, 0.07, 0.19, 1.15);
-	width:  10em;
+#frontend-image {
+	
 }
 
 #frontend-button {
-	background-color: var(--accent-color);
-	box-shadow: 3px 3px 2px #612bc575;
-	border: none;
-	border-radius: 10px;
-	color: var(--light-text-color);
-	height: 7em;
-	width: 20em;
 }
 
-@media only screen and (min-width: 768px) {
-	#post-form {
-		align-items: center;
-		/* align-content: center; */
-		display: grid;
-		flex-flow: column;
-		height: 50%;
-		/* justify-content:  space-around; */
-		justify-items: center;
-		top: 25%;
-		left: 33%;
-		margin: 0;
-		width: 33%;
-	}
-}
-
-
-#bottom-drawer:target #drawerpull {
-	bottom: 100vh;
-	
-}
 /*--------------------------------------------------------------
 ## Links
 --------------------------------------------------------------*/
@@ -478,7 +424,7 @@ a:hover, a:active {
 }
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 3px 3px var(--shadow-color);
 	float: left;
 	position: absolute;
 	top: 100%;
@@ -572,7 +518,7 @@ a:hover, a:active {
 .screen-reader-text:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 2px 2px var(--shadow-color);
 	clip: auto !important;
 	clip-path: none;
 	color: #21759b;
@@ -599,16 +545,16 @@ a:hover, a:active {
 /* dark mode */
 
 #dark-mode {
+	color: var(--accent-color);
 	cursor: pointer;
 	display:  block;
-	margin: 0 .2em 1em .2em;
 	text-align: right;
 }
 
 #dmToggle:before {
 	background: darkgrey;
 	border-radius: 50px;
-	box-shadow: inset -2px 1px 1px hsla(0, 0%, 0%, .45);
+	box-shadow: inset -2px 1px 1px var(--shadow-color);
 	color: var(--text-color);
 	content: "\26ab";
 	display: inline-block;
@@ -616,7 +562,7 @@ a:hover, a:active {
 	margin: 0 5px;
 	padding-top: 3px;
 	text-align: left;
-	text-shadow: -1px 1px 2px rgba(0,0,0,.45);
+	text-shadow: -1px 1px 2px var(--shadow-color);
 	transition: all .25s;
 	width: 31px;
  
@@ -624,7 +570,7 @@ a:hover, a:active {
 }
 :root.dark-mode #dmToggle:before {
 	text-align: right;
-	background: hsl(261, 80%, 80%);
+	background: var(--accent-color);
 }
 
 /*--------------------------------------------------------------
@@ -710,10 +656,8 @@ a:hover, a:active {
 	display: none;
 }
 
-.post-thumbnail {
-	box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.27);
-	padding: 0.5em;
-	display: inline-block;
+img {
+	box-shadow: -2px 2px 3px var(--shadow-color);
 }
 .page-content,
 .entry-content,
@@ -762,8 +706,9 @@ a:hover, a:active {
 		grid-column-end: span 2;
 	}
 	.post-thumbnail {
+		/* background-color: hsla(55, 0%, 16%, 1); */
 		float: left;
-		margin: 10px 30px;
+		margin: 10px;
 		grid-row-end: span 2;
 		/* grid-column-start: 2; */
 	}
